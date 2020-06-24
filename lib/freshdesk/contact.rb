@@ -19,6 +19,10 @@ module Freshdesk
         new("/contacts/#{id}").resource(id: id, params: params).put
       end
 
+      def invite_a_contact(id:, params: {})
+        new("/contacts/#{id}/send_invite").resource(id: id).put
+      end
+
       def delete_a_contact(id:)
         new("/contacts/#{id}").resource(id: id).delete
       end
